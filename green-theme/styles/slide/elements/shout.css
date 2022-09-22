@@ -1,0 +1,69 @@
+/* Shout */
+
+.slide .shout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    padding: 0 75px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+.slide .shout.big {
+    font-size: 150px;
+    line-height: 1;
+}
+
+/* Code */
+
+.slide pre.shout code {
+    width: auto;
+}
+
+.slide pre.shout.code code {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Link */
+
+.slide .shout a {
+    background-image: linear-gradient(
+        to top,
+        rgba(75, 134, 194, 0.4) 0.06em,
+        transparent 0.06em
+    );
+    background-position: bottom 0.13em left 0;
+    background-repeat: repeat-x;
+}
+
+/* Full */
+
+.shower.full .slide .shout.grow {
+    opacity: 0;
+    transform: scale(0.1) translateY(-50%);
+}
+
+.shower.full .slide .shout.shrink {
+    opacity: 0;
+    transform: scale(10) translateY(-50%);
+}
+
+/* Active */
+
+@keyframes shout {
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(-50%);
+    }
+}
+
+.shower.full .slide.active .shout.grow,
+.shower.full .slide.active .shout.shrink {
+    animation-name: shout;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
